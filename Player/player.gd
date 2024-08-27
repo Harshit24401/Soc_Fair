@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 400.0
-const JUMP_VELOCITY = -600.0
+const JUMP_VELOCITY = -700.0
 var health = 10;
 
 @onready var ap = $AnimationPlayer;
@@ -103,7 +103,7 @@ func _physics_process(delta):
 					
 					
 					cshape.shape = c_cshape;
-					cshape.position.y = 10;
+					cshape.position.y = 3;
 					anim.play("crouch_walk");
 					
 		else:
