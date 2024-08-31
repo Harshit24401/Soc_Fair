@@ -61,14 +61,14 @@ func _physics_process(delta):
 	if health > 0:
 		if not is_on_floor() && not can_coyote_jump:
 			velocity.y += gravity * delta
-			print(velocity.y)
+			
 			
 		
 		# Handle jump.
 		if Input.is_action_just_pressed("death"):
 			health = 0;
 		
-		if Input.is_action_just_pressed("ui_accept"):
+		if Input.is_action_just_pressed("up"):
 			if is_on_floor() or can_coyote_jump:
 				velocity.y = JUMP_VELOCITY
 				anim.play("jump");
@@ -85,10 +85,11 @@ func _physics_process(delta):
 
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
-		var direction = Input.get_axis("ui_left", "ui_right")
+		var direction = Input.get_axis("left", "right")
+		print(direction)
 		if direction == -1:
 			get_node("AnimatedSprite2D").flip_h = true;
-		elif direction == 1:
+		elif direction >= 0.97:
 			get_node("AnimatedSprite2D").flip_h = false;
 		if direction:
 			velocity.x = direction * SPEED
@@ -97,7 +98,7 @@ func _physics_process(delta):
 					anim.play("run");
 					cshape.shape = s_cshape
 					cshape.position.y = 0;
-				elif  Input.is_action_pressed("shift") and is_on_floor():
+				elif  Input.is_action_pressed("shift+walk") and is_on_floor():
 					
 					velocity.x = direction*(100);
 					
@@ -127,7 +128,7 @@ func _physics_process(delta):
 			ctimer.start()
 		if !was_on_floor and is_on_floor():
 			if fall_speed > 900:
-				print(health);
+				
 				var damage = int(fall_speed/100 - 8);
 				health -= damage;
 	

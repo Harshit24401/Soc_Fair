@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dgec247rjs8u4"]
+[gd_scene load_steps=11 format=3 uid="uid://dgec247rjs8u4"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_lwt00"]
 [ext_resource type="PackedScene" uid="uid://baw7npomtmkkb" path="res://Player/player.tscn" id="2_v8a2b"]
-[ext_resource type="Texture2D" uid="uid://dhujisq6ecxb" path="res://Assets/Sunny Land Collection Files/Assets/Environments/Forest of Illusion/Forest of Illusion Expansion Pack/Layers/middle.png" id="3_282cb"]
 [ext_resource type="Texture2D" uid="uid://dysck02u4rpd6" path="res://Assets/Sunny Land Collection Files/Assets/Environments/Rocky Tileset/PNG/layers/rocky-tileset-2.png" id="4_sgevs"]
 [ext_resource type="Texture2D" uid="uid://cnv2foj7csrl2" path="res://Assets/Sunny Land Collection Files/Assets/Environments/Rocky Tileset/PNG/layers/rocky-tileset.png" id="5_os4gl"]
 [ext_resource type="Texture2D" uid="uid://b8hoktj8kdomy" path="res://Assets/Sunny Land Collection Files/Assets/Environments/Forest of Illusion/Forest of Illusion Expansion Pack/Layers/back.png" id="5_wt0gn"]
@@ -463,6 +462,30 @@ sources/1 = SubResource("TileSetAtlasSource_vvj08")
 [node name="world" type="Node2D"]
 script = ExtResource("1_lwt00")
 
+[node name="Back3" type="Sprite2D" parent="."]
+position = Vector2(590, 1045)
+rotation = -3.14159
+scale = Vector2(2.05608, 1.81895)
+texture = ExtResource("5_wt0gn")
+
+[node name="Back4" type="Sprite2D" parent="."]
+position = Vector2(1726, 1049)
+rotation = -3.14159
+scale = Vector2(2.05608, 1.81895)
+texture = ExtResource("5_wt0gn")
+
+[node name="Back5" type="Sprite2D" parent="."]
+position = Vector2(2904, 1064)
+rotation = -3.14159
+scale = Vector2(2.05608, 1.81895)
+texture = ExtResource("5_wt0gn")
+
+[node name="Back6" type="Sprite2D" parent="."]
+position = Vector2(4040, 1076)
+rotation = -3.14159
+scale = Vector2(2.05608, 1.81895)
+texture = ExtResource("5_wt0gn")
+
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
@@ -499,13 +522,6 @@ texture = ExtResource("5_wt0gn")
 position = Vector2(507.017, 4.04727)
 scale = Vector2(0.769212, 1.04019)
 texture = ExtResource("5_wt0gn")
-
-[node name="Middle" type="Sprite2D" parent="Back/Back"]
-position = Vector2(37.2582, 160.528)
-scale = Vector2(0.785778, 1.1761)
-texture = ExtResource("3_282cb")
-centered = false
-flip_v = true
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_v8a2b")]
 position = Vector2(226, 401)
