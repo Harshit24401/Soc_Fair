@@ -1,5 +1,5 @@
 [gd_resource type="CapsuleShape2D" format=3 uid="uid://nbask667m70g"]
 
 [resource]
-radius = 17.0
-height = 70.0
+radius = 50.0
+height = 172.0

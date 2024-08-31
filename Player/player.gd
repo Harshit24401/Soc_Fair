@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 400.0
+const SPEED = 600.0
 const JUMP_VELOCITY = -700.0
 var health = 10;
 
@@ -80,7 +80,7 @@ func _physics_process(delta):
 			
 		if Input.is_action_just_pressed("shift") and is_on_floor():
 			anim.play("crouch");
-			cshape.position.y = 10;
+			cshape.position.y = 100;
 			cshape.shape = c_cshape;
 
 		# Get the input direction and handle the movement/deceleration.

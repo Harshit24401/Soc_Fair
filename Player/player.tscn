@@ -480,9 +480,9 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_e0tiy"]
 resource_name = "run"
-length = 0.35
+length = 0.4
 loop_mode = 1
-step = 0.05
+step = 0.08
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -502,10 +502,10 @@ tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.08, 0.16, 0.24, 0.32, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 5, 6, 7, 8]
+"values": [0, 1, 2, 3, 4, 5]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b0cre"]
@@ -532,8 +532,8 @@ position = Vector2(1, 0)
 shape = ExtResource("2_ib8lu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, 6)
-scale = Vector2(0.693164, 0.888504)
+position = Vector2(0, 14)
+scale = Vector2(1.77024, 2.26911)
 sprite_frames = SubResource("SpriteFrames_n0iin")
 animation = &"run"
 
@@ -555,12 +555,6 @@ theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, 1)
-zoom = Vector2(2.05, 2.05)
-limit_left = 0
-limit_top = 0
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_b0cre")
@@ -571,7 +565,7 @@ position = Vector2(-7, 5)
 target_position = Vector2(0, -53)
 
 [node name="RayCast2D_2" type="RayCast2D" parent="."]
-position = Vector2(14, -4)
+position = Vector2(4, 15)
 target_position = Vector2(0, -45)
 
 [node name="Timer" type="Timer" parent="."]
