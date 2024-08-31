@@ -1,6 +1,6 @@
 extends ParallaxBackground
 
-var scroll_speed =100;
+var scroll_speed =90;
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

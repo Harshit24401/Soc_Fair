@@ -22,3 +22,6 @@ func _on_rigid_body_2d_body_entered(body):
 	print("here")
 	
 	get_tree().change_scene_to_file("res://win.tscn"); # Replace with function body.
+
+func _on_lava_body_entered(body):
+	print("here") # Replace with function body.

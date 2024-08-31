@@ -48,6 +48,7 @@ func check_health():
 		
 		print("die")
 		self.queue_free()
+		get_tree().change_scene_to_file("res://menu.tscn")
 		
 		#await sprite.animation_finished()
 		
@@ -61,6 +62,7 @@ func _physics_process(delta):
 	if health > 0:
 		if not is_on_floor() && not can_coyote_jump:
 			velocity.y += gravity * delta
+			anim.play("fall");
 			
 			
 		
@@ -86,7 +88,7 @@ func _physics_process(delta):
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		var direction = Input.get_axis("left", "right")
-		print(direction)
+		
 		if direction == -1:
 			get_node("AnimatedSprite2D").flip_h = true;
 		elif direction >= 0.97:
@@ -94,7 +96,7 @@ func _physics_process(delta):
 		if direction:
 			velocity.x = direction * SPEED
 			if velocity.y ==0 :
-				if not Input.is_action_pressed("shift") and is_on_floor():
+				if not Input.is_action_pressed("shift+walk") and is_on_floor():
 					anim.play("run");
 					cshape.shape = s_cshape
 					cshape.position.y = 0;
@@ -121,6 +123,10 @@ func _physics_process(delta):
 			var collision = get_slide_collision(i)
 			if collision.get_collider().name == "RigidBody2D":
 				get_tree().change_scene_to_file("res://win.tscn");
+			elif collision.get_collider().name == "lava":
+				print("lava");
+				health = 0;
+				
 		
 		if was_on_floor && !is_on_floor() && velocity.y >= 0:
 			

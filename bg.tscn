@@ -11,12 +11,12 @@ follow_viewport_enabled = true
 script = ExtResource("1_y5uue")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
-motion_mirroring = Vector2(2250, 0)
+motion_mirroring = Vector2(1000, 0)
 
 [node name="Water" type="Sprite2D" parent="ParallaxLayer3"]
 top_level = true
-position = Vector2(1142, 322)
-scale = Vector2(7.9809, 3.12981)
+position = Vector2(2080, 542)
+scale = Vector2(15.0022, 6.06611)
 texture = ExtResource("1_1ekal")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
@@ -25,9 +25,10 @@ top_level = true
 motion_mirroring = Vector2(1150, 0)
 
 [node name="Mountains" type="Sprite2D" parent="ParallaxLayer"]
-position = Vector2(573, 507)
-scale = Vector2(4.48828, 2.37868)
+position = Vector2(-227, 187)
+scale = Vector2(9.55078, 4.86765)
 texture = ExtResource("2_scbyo")
+centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
 show_behind_parent = true
@@ -35,11 +36,11 @@ top_level = true
 motion_mirroring = Vector2(1500, 0)
 
 [node name="Front" type="Sprite2D" parent="ParallaxLayer2"]
-position = Vector2(483, 386)
+position = Vector2(476, 764)
 scale = Vector2(2.16518, 2.49219)
 texture = ExtResource("3_ovhdq")
 
 [node name="Flag" type="Sprite2D" parent="ParallaxLayer2"]
-position = Vector2(504, 215)
+position = Vector2(497, 595)
 scale = Vector2(6.90625, 1.51389)
 texture = ExtResource("4_lmgyv")

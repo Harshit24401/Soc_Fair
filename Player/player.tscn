@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://baw7npomtmkkb"]
+[gd_scene load_steps=62 format=3 uid="uid://baw7npomtmkkb"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_vit1e"]
 [ext_resource type="Shape2D" uid="uid://nbask667m70g" path="res://resources/player_stand.tres" id="2_ib8lu"]
@@ -255,6 +255,11 @@ animations = [{
 "name": &"death",
 "speed": 5.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nqjfk")
@@ -308,11 +313,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"jump",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"new_animation_1",
 "speed": 5.0
 }, {
 "frames": [{
@@ -462,6 +462,36 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 }
 
+[sub_resource type="Animation" id="Animation_ai3kf"]
+resource_name = "fall"
+length = 0.5
+loop_mode = 1
+step = 0.08
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"jump"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.24),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [3, 4, 5]
+}
+
 [sub_resource type="Animation" id="Animation_70ubk"]
 resource_name = "idle"
 length = 0.5
@@ -557,6 +587,7 @@ _data = {
 "crouch": SubResource("Animation_i52ua"),
 "crouch_walk": SubResource("Animation_07mlv"),
 "death": SubResource("Animation_uixoy"),
+"fall": SubResource("Animation_ai3kf"),
 "idle": SubResource("Animation_70ubk"),
 "jump": SubResource("Animation_a60w2"),
 "run": SubResource("Animation_e0tiy")
@@ -582,19 +613,40 @@ animation = &"run"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 1546.0
+offset_top = -5.0
+offset_right = 1736.0
+offset_bottom = 132.0
+theme_override_font_sizes/font_size = 50
+text = "HP: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="hp" type="Label" parent="CanvasLayer"]
-offset_left = 1624.0
-offset_top = -1.0
-offset_right = 1810.0
-offset_bottom = 130.0
+offset_left = 1644.0
+offset_top = 3.0
+offset_right = 1830.0
+offset_bottom = 134.0
 theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="time" type="Label" parent="CanvasLayer"]
-offset_right = 169.0
-offset_bottom = 110.0
+offset_left = 236.0
+offset_top = -2.0
+offset_right = 405.0
+offset_bottom = 108.0
 theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_left = 66.0
+offset_right = 230.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 50
+text = "TIME: "
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -602,7 +654,7 @@ vertical_alignment = 1
 position = Vector2(0, 1)
 zoom = Vector2(2.05, 2.05)
 limit_left = 0
-limit_top = 0
+limit_bottom = 1920
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
