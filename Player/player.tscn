@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://baw7npomtmkkb"]
+[gd_scene load_steps=63 format=3 uid="uid://baw7npomtmkkb"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_vit1e"]
 [ext_resource type="Shape2D" uid="uid://nbask667m70g" path="res://resources/player_stand.tres" id="2_ib8lu"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://6pqr48gygq7t" path="res://Assets/Colour1/Outline/120x80_PNGSheets/_CrouchWalk.png" id="4_7l180"]
 [ext_resource type="Texture2D" uid="uid://b0dtlxutu2205" path="res://Assets/Colour1/Outline/120x80_PNGSheets/_Fall.png" id="4_x3hke"]
 [ext_resource type="Texture2D" uid="uid://d160vjhkkk6gx" path="res://Assets/Colour1/Outline/120x80_PNGSheets/_DeathNoMovement.png" id="5_1y177"]
+[ext_resource type="Texture2D" uid="uid://cltcogo6pnkap" path="res://3332db2e45a36222e63ad99da6513cbc-removebg-preview.png" id="10_aulg4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nqjfk"]
 atlas = ExtResource("2_xnnmt")
@@ -612,6 +613,13 @@ sprite_frames = SubResource("SpriteFrames_n0iin")
 animation = &"run"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="3332Db2e45a36222e63Ad99Da6513Cbc-removebg-preview" type="Sprite2D" parent="CanvasLayer"]
+light_mask = 16
+texture_filter = 2
+position = Vector2(953, 58)
+scale = Vector2(0.2895, 0.2895)
+texture = ExtResource("10_aulg4")
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 offset_left = 1546.0
